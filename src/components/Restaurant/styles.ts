@@ -43,7 +43,7 @@ export const Images = styled.img`
 `
 export const Div = styled.div`
   width: 472px;
-  height: 181px;
+  height: 230px;
   flex-shrink: 0;
   border-right: 1px solid #e66767;
   border-bottom: 1px solid #e66767;
@@ -57,4 +57,21 @@ export const Star = styled.div`
   flex-shrink: 0;
   margin-left: 435px;
   position: absolute;
+`
+export const Tipo = styled.div`
+  width: 61px;
+  height: 31px;
+  flex-shrink: 0;
+  background: #e66767;
+  color: #ffebd9;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  position: absolute;
+  margin-left: 400px;
+  margin-top: 13px;
+  padding-top: 9px;
 `

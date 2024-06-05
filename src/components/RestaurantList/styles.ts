@@ -15,8 +15,8 @@ export const List = styled.ul`
   }
 `
 export const Destaque = styled.div`
-  margin-left: 210px;
-  margin-top: 86px;
+  margin-left: 265px;
+  margin-top: 93px;
   position: absolute;
   color: #ffebd9;
   text-align: center;

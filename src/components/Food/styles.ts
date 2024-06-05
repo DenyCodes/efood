@@ -3,10 +3,12 @@ import { TagContainer } from '../Tag/styles'
 import { cores } from '../../styles'
 
 export const Card = styled.div`
-  width: 360px;
-  height: 390px;
+  width: 320px;
+  height: 350px;
   flex-shrink: 0;
   background-color: #e66767;
+  position: relative;
+  left: 50px;
   padding: 8px;
 `
 
@@ -43,7 +45,6 @@ export const Div = styled.div`
   width: 304px;
   height: 181px;
   flex-shrink: 0;
-  padding: 8px 7px;
 `
 export const Star = styled.div`
   width: 21px;
@@ -64,9 +65,10 @@ export const Botao = styled.div`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  padding-top: 2px;
 
   a {
-    color: #e66767;
+    color: #fff;
     text-align: center;
     font-family: Roboto;
     font-size: 14px;
@@ -75,4 +77,59 @@ export const Botao = styled.div`
     line-height: normal;
     text-decoration: none;
   }
+`
+
+export const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+`
+
+export const ModalContent = styled.div`
+  width: 1052px;
+  height: 370px;
+  flex-shrink: 0;
+  color: white;
+  background: #e66767;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+`
+
+export const ModalImage = styled.img`
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  margin-right: 20px;
+`
+
+export const ModalDetails = styled.div`
+  display: flex;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  top: -54px;
+  position: relative;
+  flex-direction: column;
+`
+
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
 `

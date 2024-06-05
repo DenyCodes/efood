@@ -36,9 +36,13 @@ export const Saibamais = styled.div`
   font-weight: 700;
   line-height: normal;
   position: absolute;
-  margin-top: 100px;
+  margin-top: 120px;
   background: #e66767;
   width: 90px;
   height: 30px;
   padding-top: 4px;
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
 `

@@ -1,26 +1,30 @@
 import Foods from '../Food'
-import Food from '../models/Food'
-import { Container, Destaque, List } from './styles'
+import { Cardapio } from '../pages/Product'
+import { Container, List } from './styles'
 
 export type Props = {
-  foods: Food[]
+  foods: Cardapio[]
 }
 
-const FoodList = ({ foods }: Props) => (
-  <Container>
-    <div>
-      <List className="container">
-        {foods.map((foods) => (
-          <Foods
-            key={foods.id}
-            image={foods.image}
-            title={foods.title}
-            description={foods.description}
-          />
-        ))}{' '}
-      </List>
-    </div>
-  </Container>
-)
+const FoodList = ({ foods }: Props) => {
+  if (foods.length === 0) {
+    return <p>No foods available</p> // Verificação para quando não há dados
+  }
+
+  return (
+    <Container>
+      <div>
+        <List className="container">
+          {foods.map((food) => (
+            <Foods
+              key={food.id}
+              cardapio={food} // Passando o objeto food completo
+            />
+          ))}
+        </List>
+      </div>
+    </Container>
+  )
+}
 
 export default FoodList

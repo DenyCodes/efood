@@ -1,22 +1,42 @@
-import bannerImg from '../../../src/images/banner_img.png'
+import React from 'react'
 import Tag from '../Tag'
-import { Banner, Carrinho, Restaurant, Titulo, TituloP } from './styles'
+import { Banner, Header, Carrinho, Restaurant, TituloP } from './styles'
+import cart, { open } from '../../store/reducers/cart'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
 
-const Hero = () => (
-  <>
-    <Restaurant>
-      <h2>Restaurantes</h2>
-    </Restaurant>
-    <Carrinho>0 Produtos Adicionados no carrinho</Carrinho>
-    <Banner style={{ backgroundImage: `url(${bannerImg})` }}>
-      <div className="container">
-        <Titulo>Italiana</Titulo>
-        <TituloP>
-          <h1>La Dolce Vita Trattoria</h1>
-        </TituloP>
-      </div>
-    </Banner>
-  </>
-)
+type HeroProps = {
+  titulo: string
+  capa: string
+}
+
+const Hero = ({ titulo, capa }: HeroProps) => {
+  const dispatch = useDispatch()
+  const { items } = useSelector((state: RootReducer) => state.cart)
+
+  const openCart = () => {
+    dispatch(open())
+  }
+
+  return (
+    <>
+      <Header>
+        <Restaurant>
+          <a href="/">Restaurantes</a>
+        </Restaurant>
+        <Carrinho onClick={openCart}>
+          {items.length}Produtos no carrinho
+        </Carrinho>
+      </Header>
+      <Banner style={{ backgroundImage: `url(${capa})` }}>
+        <div className="container">
+          <TituloP>
+            <h1>{titulo}</h1>
+          </TituloP>
+        </div>
+      </Banner>
+    </>
+  )
+}
 
 export default Hero

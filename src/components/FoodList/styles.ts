@@ -13,7 +13,6 @@ export const List = styled.ul`
   width: 68%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 60px;
   img {
     max-width: 472px;
     width: 100%;

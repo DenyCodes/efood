@@ -1,15 +1,14 @@
-import { styled } from 'styled-components'
+import styled from 'styled-components'
 
 export const Banner = styled.div`
-  position: relative;
-  width: 100%
-  display: block;
-  height: 280px;
-  top: -220px;
+  top: -210px;
 
+  position: relative;
+  width: 100%;
+  height: 280px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
 
   &::after {
     position: absolute;
@@ -22,60 +21,58 @@ export const Banner = styled.div`
     opacity: 0.56;
   }
 `
-export const Titulo = styled.div`
-  color: #fff;
-  font-family: Roboto;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 100;
-  line-height: normal;
-  width: 101px;
-  height: 33.25px;
-  flex-shrink: 0;
-  padding-top: 24px;
-  left: 355px;
+
+export const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
   position: absolute;
+  top: 0;
+  z-index: 1;
+  top: 84px;
+  @media (min-width: 768px) {
+    padding: 10px 50px;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 10px 100px;
+  }
 `
+
 export const Restaurant = styled.div`
-  position: absolute;
-  z-index: 1;
-  top: 76px;
-  margin-left: 354px;
   color: #e66767;
-  text-align: center;
   font-family: Roboto;
   font-size: 18px;
-  font-style: normal;
   font-weight: 900;
-  line-height: normal;
+
+  a {
+    color: #e66767;
+    text-decoration: none;
+    display: flex;
+  }
 `
-export const Carrinho = styled.div`
-  width: 256px;
+
+export const Carrinho = styled.a`
+  display: flex;
   color: #e66767;
-  text-align: right;
   font-family: Roboto;
   font-size: 18px;
-  font-style: normal;
   font-weight: 900;
-  line-height: normal;
-  position: absolute;
-  z-index: 1;
-  top: 76px;
-  margin-left: 1264px;
 `
+
 export const TituloP = styled.div`
-  width: 676px;
-  /* height: 33.25px; */
-  /* flex-shrink: 0; */
   color: #fff;
   font-family: Roboto;
   font-size: 20px;
-  font-style: normal;
   font-weight: 900;
-  line-height: normal;
   position: relative;
   z-index: 1;
   padding-top: 197px;
-  /* padding-right: 27px; */
   margin-left: -74px;
+
+  h1 {
+    margin: 0;
+  }
 `
